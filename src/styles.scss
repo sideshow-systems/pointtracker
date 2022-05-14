@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './assets/styles/normalize';
+@import './assets/styles/font';
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	font-family: $font-family-default;
+
+	// Prevent pull to refresh on PWA
+	overscroll-behavior-y: contain;
+}
+
+html {
+	font-size: 62.5%;
+}
