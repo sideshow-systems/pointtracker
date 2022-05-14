@@ -9,6 +9,7 @@ import { GameStatsComponent } from './containers/game-stats/game-stats.component
 import { FooterControlsComponent } from './containers/footer-controls/footer-controls.component';
 import { LapIndicatorComponent } from './components/lap-indicator/lap-indicator.component';
 import { SpacerLineComponent } from './components/spacer-line/spacer-line.component';
+import { ResultBoxComponent } from './components/result-box/result-box.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,8 @@ import { SpacerLineComponent } from './components/spacer-line/spacer-line.compon
 		GameStatsComponent,
 		FooterControlsComponent,
 		LapIndicatorComponent,
-		SpacerLineComponent
+		SpacerLineComponent,
+		ResultBoxComponent
 	],
 	imports: [
 		CommonModule,

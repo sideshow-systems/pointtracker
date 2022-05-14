@@ -1,0 +1,15 @@
+@import '../../../../../assets/styles/styles';
+
+:host {
+	.result-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 1.5rem;
+
+		.spacerpoints-wrapper {
+			font-size: 8rem;
+			margin: 10px 20px;
+		}
+	}
+}

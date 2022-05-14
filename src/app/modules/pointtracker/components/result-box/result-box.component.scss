@@ -1,0 +1,29 @@
+@import '../../../../../assets/styles/styles';
+
+$bw-border-radius: 0.7rem;
+
+:host {
+	.result-box-wrapper {
+		width: 10rem;
+		border: 1px solid $primary;
+		border-radius: $bw-border-radius;
+		overflow: hidden;
+
+		h3 {
+			text-align: center;
+			background-color: $primary;
+			color: $brightest;
+			margin: 0px;
+			padding: 3px 5px;
+			text-transform: uppercase;
+			font-size: 1.8rem;
+		}
+
+		.points {
+			text-align: center;
+			font-size: 6rem;
+			font-weight: bold;
+			padding: 0.5rem 1rem;
+		}
+	}
+}
