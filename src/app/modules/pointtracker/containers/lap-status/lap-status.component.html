@@ -1,1 +1,6 @@
-<p>lap-status works!</p>
+<div class="lap-status-wrapper">
+	<h3>Durchgang</h3>
+	<div class="lap-indicators-wrapper">
+		<pt-lap-indicator *ngFor="let lap of lapStatus" [lap]="lap"></pt-lap-indicator>
+	</div>
+</div>

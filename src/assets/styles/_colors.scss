@@ -1,3 +1,23 @@
 // Color definitions
 
-$primary: #cc9900;
+// Defaults
+$brightest: #ffffff;
+$darkest: #000000;
+
+// Primary color
+$primary: #00AFEF;
+
+// Secondary color
+$secondary: #A4A7A8;
+
+// Alert color
+$alert: #FF6969;
+
+// Success color
+$success: #55C984;
+
+// Info color
+$info: $primary;
+
+// Warning color
+$warning: #cb7812;

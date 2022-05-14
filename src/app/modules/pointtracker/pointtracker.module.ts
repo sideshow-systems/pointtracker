@@ -7,6 +7,7 @@ import { ResultComponent } from './containers/result/result.component';
 import { LapPointCounterComponent } from './containers/lap-point-counter/lap-point-counter.component';
 import { GameStatsComponent } from './containers/game-stats/game-stats.component';
 import { FooterControlsComponent } from './containers/footer-controls/footer-controls.component';
+import { LapIndicatorComponent } from './components/lap-indicator/lap-indicator.component';
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,8 @@ import { FooterControlsComponent } from './containers/footer-controls/footer-con
 		ResultComponent,
 		LapPointCounterComponent,
 		GameStatsComponent,
-		FooterControlsComponent
+		FooterControlsComponent,
+		LapIndicatorComponent
 	],
 	imports: [
 		CommonModule,
