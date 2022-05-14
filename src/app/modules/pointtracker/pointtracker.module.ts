@@ -10,6 +10,8 @@ import { FooterControlsComponent } from './containers/footer-controls/footer-con
 import { LapIndicatorComponent } from './components/lap-indicator/lap-indicator.component';
 import { SpacerLineComponent } from './components/spacer-line/spacer-line.component';
 import { ResultBoxComponent } from './components/result-box/result-box.component';
+import { ButtonComponent } from './components/button/button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
 	declarations: [
@@ -21,11 +23,13 @@ import { ResultBoxComponent } from './components/result-box/result-box.component
 		FooterControlsComponent,
 		LapIndicatorComponent,
 		SpacerLineComponent,
-		ResultBoxComponent
+		ResultBoxComponent,
+		ButtonComponent,
 	],
 	imports: [
 		CommonModule,
 		PointtrackerRoutingModule,
+		FontAwesomeModule,
 	],
 })
 export class PointtrackerModule {}

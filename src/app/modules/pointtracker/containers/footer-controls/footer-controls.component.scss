@@ -1,0 +1,23 @@
+@import '../../../../../assets/styles/styles';
+
+:host {
+	.footer-controls-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $primary;
+		padding: 12px 10px;
+		color: $brightest;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+
+		pt-button {
+			&.btn-prev {
+				margin-right: 0.5rem;
+			}
+		}
+
+	}
+}
