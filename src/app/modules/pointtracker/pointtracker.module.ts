@@ -8,6 +8,7 @@ import { LapPointCounterComponent } from './containers/lap-point-counter/lap-poi
 import { GameStatsComponent } from './containers/game-stats/game-stats.component';
 import { FooterControlsComponent } from './containers/footer-controls/footer-controls.component';
 import { LapIndicatorComponent } from './components/lap-indicator/lap-indicator.component';
+import { SpacerLineComponent } from './components/spacer-line/spacer-line.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,8 @@ import { LapIndicatorComponent } from './components/lap-indicator/lap-indicator.
 		LapPointCounterComponent,
 		GameStatsComponent,
 		FooterControlsComponent,
-		LapIndicatorComponent
+		LapIndicatorComponent,
+		SpacerLineComponent
 	],
 	imports: [
 		CommonModule,

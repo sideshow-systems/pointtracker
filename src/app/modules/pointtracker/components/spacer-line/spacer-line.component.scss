@@ -1,0 +1,10 @@
+@import '../../../../../assets/styles/styles';
+
+:host {
+	hr.spacer-line {
+		border: none;
+		border-top: 1px solid $primary;
+		margin: 0px;
+		margin-top: 12px;
+	}
+}
