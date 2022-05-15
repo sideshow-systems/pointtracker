@@ -1,1 +1,6 @@
-<p>game-stats works!</p>
+<div class="game-stats-wrapper">
+	<h3>Spielverlauf</h3>
+	<div class="stats-items-wrapper">
+		<pt-stats-item *ngFor="let stat of gameStats" [statItem]="stat"></pt-stats-item>
+	</div>
+</div>

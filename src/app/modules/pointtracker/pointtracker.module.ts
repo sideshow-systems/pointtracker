@@ -12,6 +12,7 @@ import { SpacerLineComponent } from './components/spacer-line/spacer-line.compon
 import { ResultBoxComponent } from './components/result-box/result-box.component';
 import { ButtonComponent } from './components/button/button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StatsItemComponent } from './components/stats-item/stats-item.component';
 
 @NgModule({
 	declarations: [
@@ -25,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 		SpacerLineComponent,
 		ResultBoxComponent,
 		ButtonComponent,
+		StatsItemComponent,
 	],
 	imports: [
 		CommonModule,

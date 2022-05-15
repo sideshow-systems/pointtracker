@@ -1,0 +1,50 @@
+@import '../../../../../assets/styles/styles';
+
+:host {
+	.stats-item-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.6rem;
+
+		.title-box {
+			font-weight: bold;
+			width: 10rem;
+			text-align: right;
+		}
+
+		.divider-box {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			// width: 3rem;
+			text-align: center;
+		}
+
+		.result-box {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			width: 10rem;
+
+			.result-divider {
+				width: 2rem;
+				text-align: center;
+			}
+
+			.result-party {
+				width: 2.5rem;
+				text-align: right;
+				padding: 0.2rem;
+
+				&.result-wide {
+					text-align: left;
+				}
+
+				&.scored {
+					background-color: rgba($success, 0.3);
+					border-radius: 0.5rem;
+				}
+			}
+		}
+	}
+}

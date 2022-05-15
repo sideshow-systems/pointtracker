@@ -1,0 +1,19 @@
+<div class="stats-item-wrapper">
+	<div class="title-box">Durchgang {{ statItem.lapNum }}</div>
+	<div class="divider-box">:</div>
+	<div class="result-box">
+		<div
+			class="result-narrow result-party"
+			[class.scored]="statItem.scoreParty == teamInterface.NARROW"
+		>
+			{{ statItem.resultNarrow !== null ? statItem.resultNarrow : '-' }}
+		</div>
+		<div class="result-divider">:</div>
+		<div
+			class="result-wide result-party"
+			[class.scored]="statItem.scoreParty == teamInterface.WIDE"
+		>
+			{{ statItem.resultWide !== null ? statItem.resultWide : '-' }}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+
+:host {
+	.game-stats-wrapper {
+		padding: 0.8rem 1.2rem;
+
+		h3 {
+			font-size: 1.6rem;
+		}
+
+		.stats-items-wrapper {
+			pt-stats-item {
+				margin-bottom: 1rem;
+				display: block;
+			}
+		}
+	}
+}

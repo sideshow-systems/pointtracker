@@ -11,12 +11,12 @@ export class ResultComponent implements OnInit {
 
 	resultBoxNarrow: Resultbox = {
 		team: Team.NARROW,
-		points: 5,
+		points: 8,
 	}
 
 	resultBoxWide: Resultbox = {
 		team: Team.WIDE,
-		points: 3,
+		points: 11,
 	}
 
 
