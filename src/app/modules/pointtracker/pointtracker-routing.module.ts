@@ -6,7 +6,7 @@ import { DashboardPageComponent } from './containers/dashboard-page/dashboard-pa
 const routes: Routes = [
 	{
 		path: PointtrackerRoutes.emptyPath,
-		pathMatch: 'full',
+		// pathMatch: 'full',
 		redirectTo: `/${PointtrackerRoutes.pointtracker}/${PointtrackerRoutes.ptDashboard}`
 	}, {
 		path: PointtrackerRoutes.ptDashboard,

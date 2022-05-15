@@ -14,6 +14,7 @@ export enum PointtrackerRoutes {
 	// #################################
 	// #### Pointtracker ##############
 	// #################################
+	// ptDashboard = 'dashboard/:lapNum',
 	ptDashboard = 'dashboard',
 
 }
