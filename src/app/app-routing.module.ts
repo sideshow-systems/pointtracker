@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PointtrackerRoutes } from './enums/routes';
+import { CustomSerializer } from './store';
+
+import {
+	StoreRouterConnectingModule,
+	RouterStateSerializer,
+} from '@ngrx/router-store';
 
 const routes: Routes = [
 	{
@@ -15,10 +21,14 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes)
+		RouterModule.forRoot(routes),
+		StoreRouterConnectingModule.forRoot(),
 	],
 	exports: [
 		RouterModule
 	],
+	providers: [
+		{ provide: RouterStateSerializer, useClass: CustomSerializer }
+	]
 })
 export class AppRoutingModule {}
