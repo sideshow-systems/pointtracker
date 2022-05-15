@@ -9,10 +9,10 @@ import { Lap } from '../../interfaces';
 export class LapStatusComponent implements OnInit {
 
 	lapStatus: Lap[] = [
-		{ lapNumber: 1, active: true },
+		{ lapNumber: 1, active: false },
 		{ lapNumber: 2, active: false },
 		{ lapNumber: 3, active: false },
-		{ lapNumber: 4, active: false },
+		{ lapNumber: 4, active: true },
 		{ lapNumber: 5, active: false },
 		{ lapNumber: 6, active: false },
 	];

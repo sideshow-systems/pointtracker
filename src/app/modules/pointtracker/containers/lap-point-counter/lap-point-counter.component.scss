@@ -1,0 +1,73 @@
+@import '../../../../../assets/styles/styles';
+
+:host {
+	.lap-point-counter-wrapper {
+		padding: 0.8rem 1.2rem;
+
+
+		h3 {
+			font-size: 1.6rem;
+
+			span {
+				color: $primary;
+			}
+		}
+
+		.team-btns-wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 1.5rem;
+
+			.btn {
+				width: 30%;
+			}
+
+			fa-icon {
+				font-size: 2rem;
+				color: $primary;
+			}
+
+			.lap-points {
+				font-size: 1.8rem;
+				border: 1px solid $primary;
+				padding: 0.5rem;
+				border-radius: 0.8rem;
+				color: $primary;
+				font-weight: bold;
+				width: 3rem;
+				text-align: center;
+			}
+		}
+
+		.point-controls-wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 2.5rem;
+
+			.divider {
+				width: 2rem;
+			}
+		}
+
+		.lap-controls-wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+:host::ng-deep {
+	.lap-point-counter-wrapper {
+		pt-button {
+			&.btn-decrease,
+			&.btn-increase {
+				fa-icon {
+					margin: 0 !important;
+				}
+			}
+		}
+	}
+}

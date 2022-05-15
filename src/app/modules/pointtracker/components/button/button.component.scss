@@ -5,11 +5,21 @@
 		font-size: 1.4rem;
 		padding: 0.7rem 1rem;
 		border-radius: 8px;
+		background-color: $primary;
+		border: 1px solid darken($primary, 10%);
+		color: $brightest;
+		width: 100%;
 
 		&.inverted {
 			border: 1px solid $brightest;
 			color: $brightest;
 			background: rgba($brightest, 0.1);
+		}
+
+		&.inactive {
+			border: 1px solid $primary;
+			background: none;
+			color: $primary;
 		}
 
 		fa-icon {

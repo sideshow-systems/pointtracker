@@ -14,6 +14,7 @@ export class ButtonComponent implements OnInit {
 	@Input() faIcon: IconDefinition = faArrowRight;
 	@Input() inverted: boolean = false;
 	@Input() iconOnRightSide: boolean = false;
+	@Input() inactive: boolean = false;
 
 	constructor() {}
 

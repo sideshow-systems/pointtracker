@@ -1,1 +1,30 @@
-<p>lap-point-counter works!</p>
+<div class="lap-point-counter-wrapper">
+	<h3>Punkte in Durchgang <span>4</span> für</h3>
+
+	<div class="team-btns-wrapper">
+		<div class="btn btn-left">
+			<pt-button [inactive]="false">ENG</pt-button>
+		</div>
+		<div class="btn btn-right">
+			<pt-button [inactive]="true">WEIT</pt-button>
+		</div>
+		<fa-icon [icon]="faIconNext"></fa-icon>
+		<div class="lap-points">3</div>
+	</div>
+
+	<div class="point-controls-wrapper">
+		<pt-button [inverted]="false">0</pt-button>
+		<pt-button [inverted]="false">3</pt-button>
+		<pt-button [inverted]="false">5</pt-button>
+		<pt-button [inverted]="false">7</pt-button>
+		<pt-button [inverted]="false">9</pt-button>
+		<div class="divider"></div>
+		<pt-button class="btn-decrease" [inverted]="false" [faIcon]="faIconMinus" [showIcon]="true"></pt-button>
+		<pt-button class="btn-increase" [inverted]="false" [faIcon]="faIconPlus" [showIcon]="true"></pt-button>
+	</div>
+
+	<div class="lap-controls-wrapper">
+		<pt-button class="btn-prev" [inverted]="false" [faIcon]="faIconPrev" [showIcon]="true">Durchgang 3</pt-button>
+		<pt-button class="btn-next" [inverted]="false" [faIcon]="faIconNext" [showIcon]="true" [iconOnRightSide]="true">Durchgang 5</pt-button>
+	</div>
+</div>

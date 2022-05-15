@@ -1,4 +1,4 @@
-<button class="btn-wrapper" [class.inverted]="inverted">
+<button class="btn-wrapper" [class.inverted]="inverted" [class.inactive]="inactive">
 	<fa-icon class="icon-left" *ngIf="showIcon && !iconOnRightSide" [icon]="faIcon"></fa-icon>
 	<ng-content></ng-content>
 	<fa-icon class="icon-right" *ngIf="showIcon && iconOnRightSide" [icon]="faIcon"></fa-icon>
