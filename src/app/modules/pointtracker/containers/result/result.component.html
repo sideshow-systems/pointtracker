@@ -1,9 +1,9 @@
 <div class="result-wrapper">
 	<div class="narrow-wrapper">
-		<pt-result-box [result]="resultBoxNarrow"></pt-result-box>
+		<pt-result-box [result]="(resultBoxNarrow$ | async)"></pt-result-box>
 	</div>
 	<div class="spacerpoints-wrapper">:</div>
 	<div class="wide-wrapper">
-		<pt-result-box [result]="resultBoxWide"></pt-result-box>
+		<pt-result-box [result]="(resultBoxWide$ | async)"></pt-result-box>
 	</div>
 </div>

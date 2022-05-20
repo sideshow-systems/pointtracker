@@ -30,7 +30,7 @@ export const reducer = createReducer(
 	// Load stats items success
 	on(fromStatsItems.loadStatsItemsSuccess, (state, { statsItems }) => {
 		const entities = statsItems.reduce(
-			(entities: { [id: number]: StatsItem }, statsItem) => {
+			(entities: { [lapNum: number]: StatsItem }, statsItem) => {
 				return {
 					...entities,
 					[statsItem.lapNum]: statsItem,

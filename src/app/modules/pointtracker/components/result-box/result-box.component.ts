@@ -9,7 +9,7 @@ import { Resultbox } from '../../interfaces';
 })
 export class ResultBoxComponent {
 
-	@Input() result: Resultbox = {
+	@Input() result: Resultbox | null = {
 		team: Team.NARROW,
 		points: 0,
 	};
