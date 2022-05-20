@@ -13,11 +13,7 @@ import { reducers } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
 
-// This would be done dynamically with webpack for builds
-const environment = {
-	development: true,
-	production: false
-};
+import { environment } from '../environments/environment';
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];
 
@@ -30,7 +26,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
 		AppRoutingModule,
 		FontAwesomeModule,
 		StoreModule.forRoot(reducers, { metaReducers }),
-		environment.development ? StoreDevtoolsModule.instrument() : [],
+		environment.production ? [] : StoreDevtoolsModule.instrument(),
 	],
 	providers: [],
 	bootstrap: [
