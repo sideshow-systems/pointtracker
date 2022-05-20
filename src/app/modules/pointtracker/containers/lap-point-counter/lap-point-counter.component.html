@@ -1,5 +1,5 @@
 <div class="lap-point-counter-wrapper">
-	<h3>Punkte in Durchgang <span>4</span> für</h3>
+	<h3>Punkte in Durchgang <span>{{ (lap$ | async)?.lapNumber }}</span> für</h3>
 
 	<div class="team-btns-wrapper">
 		<div class="btn btn-left">

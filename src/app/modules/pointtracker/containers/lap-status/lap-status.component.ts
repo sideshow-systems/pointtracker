@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Lap } from '../../interfaces';
+import { Store } from '@ngrx/store';
 
+import { Lap } from '../../interfaces';
+import * as fromStore from '../../store';
 @Component({
 	selector: 'pt-lap-status',
 	templateUrl: './lap-status.component.html',
@@ -12,12 +14,27 @@ export class LapStatusComponent implements OnInit {
 		{ lapNumber: 1, active: false },
 		{ lapNumber: 2, active: false },
 		{ lapNumber: 3, active: false },
-		{ lapNumber: 4, active: true },
+		{ lapNumber: 4, active: false },
 		{ lapNumber: 5, active: false },
 		{ lapNumber: 6, active: false },
 	];
 
-	constructor() {}
+	constructor(
+		private _store: Store<fromStore.PointtrackerState>
+	) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this._store.select(fromStore.getCurrentLap).subscribe(lap => {
+
+			// Reset every active flag in lapStatus to false
+			this.lapStatus.forEach(lapStatus => {
+				lapStatus.active = false;
+
+				// Set the active flag to true for the current lap
+				if (lapStatus.lapNumber === lap.lapNumber) {
+					lapStatus.active = true;
+				}
+			});
+		});
+	}
 }
