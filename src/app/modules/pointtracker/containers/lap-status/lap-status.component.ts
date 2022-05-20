@@ -25,16 +25,13 @@ export class LapStatusComponent implements OnInit {
 
 	ngOnInit(): void {
 		this._store.select(fromStore.getCurrentLap).subscribe(lap => {
-
-			// Reset every active flag in lapStatus to false
-			this.lapStatus.forEach(lapStatus => {
-				lapStatus.active = false;
-
-				// Set the active flag to true for the current lap
-				if (lapStatus.lapNumber === lap.lapNumber) {
-					lapStatus.active = true;
-				}
+			this.lapStatus = this.lapStatus.map(item => {
+				return (item.lapNumber === lap.lapNumber) ? { ...item, active: true } : { ...item, active: false };
 			});
 		});
+	}
+
+	lapClicked(lap: Lap): void {
+		this._store.dispatch(fromStore.setLap({ lap: lap }));
 	}
 }

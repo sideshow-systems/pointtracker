@@ -49,6 +49,18 @@ export const reducer = createReducer(
 			error,
 		};
 	}),
+
+	// Set lap
+	on(fromLap.setLap, (state, { lap }) => {
+		return {
+			...state,
+			lap,
+			// lap: {
+			// 	lapNumber: lap.lapNumber,
+			// 	active: lap.active,
+			// }
+		};
+	}),
 );
 
 export const getLap = (state: LapState) => state.lap;
