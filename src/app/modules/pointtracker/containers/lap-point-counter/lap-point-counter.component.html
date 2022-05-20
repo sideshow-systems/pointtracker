@@ -24,7 +24,26 @@
 	</div>
 
 	<div class="lap-controls-wrapper">
-		<pt-button class="btn-prev" [inverted]="false" [faIcon]="faIconPrev" [showIcon]="true">Durchgang 3</pt-button>
-		<pt-button class="btn-next" [inverted]="false" [faIcon]="faIconNext" [showIcon]="true" [iconOnRightSide]="true">Durchgang 5</pt-button>
+		<pt-button
+			(btnClicked)="btnPrevClicked()"
+			class="btn-prev"
+			[disabled]="btnPrevDisabled"
+			[inverted]="false"
+			[faIcon]="faIconPrev"
+			[showIcon]="true"
+		>
+			{{ btnPrevLabel }}
+		</pt-button>
+		<pt-button
+			(btnClicked)="btnNextClicked()"
+			class="btn-next"
+			[disabled]="btnNextDisabled"
+			[inverted]="false"
+			[faIcon]="faIconNext"
+			[showIcon]="true"
+			[iconOnRightSide]="true"
+		>
+		{{ btnNextLabel }}
+		</pt-button>
 	</div>
 </div>
