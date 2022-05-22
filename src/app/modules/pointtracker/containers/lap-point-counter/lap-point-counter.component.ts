@@ -6,6 +6,7 @@ import * as fromStore from '../../store';
 import { Team } from 'src/app/modules/enums';
 import { Store } from '@ngrx/store';
 import { Lap, StatsItem } from '../../interfaces';
+import { take, takeLast } from 'rxjs/operators';
 
 @Component({
 	selector: 'pt-lap-point-counter',
@@ -105,8 +106,28 @@ export class LapPointCounterComponent implements OnInit {
 	}
 
 	private _writeLapToStore(): void {
-		const resultNarrow = (this.scoreTeam === Team.NARROW) ? this.lapPoints : 0;
-		const resultWide = (this.scoreTeam === Team.WIDE) ? this.lapPoints : 0;
+		// console.log('_writeLapToStore');
+
+		// this._store.select(fromStore.getAllStatsItems).subscribe(statsItems => {
+
+		// 	if (statsItems) {
+		// 		statsItems.forEach(statsItem => {
+		// 			console.log('statsItem', statsItem);
+
+		// 			if (this.scoreTeam === Team.NARROW) {
+		// 				prevPointsWide += statsItem.resultWide || 0;
+		// 			} else {
+		// 				prevPointsNarrow += statsItem.resultNarrow || 0;
+		// 			}
+		// 		});
+		// 	}
+		// });
+
+		let prevPointsNarrow = 0;
+		let prevPointsWide = 0;
+
+		const resultNarrow = (this.scoreTeam === Team.NARROW) ? this.lapPoints : prevPointsNarrow;
+		const resultWide = (this.scoreTeam === Team.WIDE) ? this.lapPoints : prevPointsWide;
 
 		const statsItem: StatsItem = {
 			lapNum: this._currentLap.lapNumber,
