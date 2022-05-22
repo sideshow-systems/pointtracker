@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from 'src/app/modules/enums';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { StatsItem } from '../../interfaces';
+import * as fromStore from '../../store';
 
 @Component({
 	selector: 'pt-game-stats',
@@ -9,46 +11,11 @@ import { StatsItem } from '../../interfaces';
 })
 export class GameStatsComponent implements OnInit {
 
-	gameStats: StatsItem[] = [
-		{
-			lapNum: 1,
-			resultNarrow: 5,
-			resultWide: 0,
-			scoreParty: Team.NARROW,
-		},
-		{
-			lapNum: 2,
-			resultNarrow: 5,
-			resultWide: 3,
-			scoreParty: Team.WIDE,
-		},
-		{
-			lapNum: 3,
-			resultNarrow: 5,
-			resultWide: 11,
-			scoreParty: Team.WIDE,
-		},
-		{
-			lapNum: 4,
-			resultNarrow: 8,
-			resultWide: 11,
-			scoreParty: Team.NARROW,
-		},
-		{
-			lapNum: 5,
-			resultNarrow: null,
-			resultWide: null,
-			scoreParty: null,
-		},
-		{
-			lapNum: 6,
-			resultNarrow: null,
-			resultWide: null,
-			scoreParty: null,
-		},
-	];
+	gameStats$: Observable<StatsItem[]> = this._store.select(fromStore.getAllStatsItems);
 
-	constructor() {}
+	constructor(
+		private _store: Store<fromStore.PointtrackerState>
+	) {}
 
 	ngOnInit(): void {}
 }

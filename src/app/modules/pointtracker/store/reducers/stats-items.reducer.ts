@@ -10,7 +10,50 @@ export interface StatsItemState {
 }
 
 export const initialState: StatsItemState = {
-	entities: {},
+	entities: {
+		1: {
+			lapNum: 1,
+			active: true,
+			resultNarrow: null,
+			resultWide: null,
+			scoreParty: null,
+		},
+		2: {
+			lapNum: 2,
+			active: false,
+			resultNarrow: null,
+			resultWide: null,
+			scoreParty: null,
+		},
+		3: {
+			lapNum: 3,
+			active: false,
+			resultNarrow: null,
+			resultWide: null,
+			scoreParty: null,
+		},
+		4: {
+			lapNum: 4,
+			active: false,
+			resultNarrow: null,
+			resultWide: null,
+			scoreParty: null,
+		},
+		5: {
+			lapNum: 5,
+			active: false,
+			resultNarrow: null,
+			resultWide: null,
+			scoreParty: null,
+		},
+		6: {
+			lapNum: 6,
+			active: false,
+			resultNarrow: null,
+			resultWide: null,
+			scoreParty: null,
+		},
+	},
 	loaded: false,
 	loading: false,
 	error: null,
