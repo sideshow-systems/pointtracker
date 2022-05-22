@@ -7,6 +7,8 @@ export const LOAD_STATS_ITEMS = '[Dashboard] Load Stats Items';
 export const LOAD_STATS_ITEMS_FAIL = '[Dashboard] Load Stats Items Fail';
 export const LOAD_STATS_ITEMS_SUCCESS = '[Dashboard] Load Stats Items Success';
 
+export const UPDATE_STATS_ITEM = '[Dashboard] Update Stats Item';
+
 export const loadStatsItems = createAction(
 	LOAD_STATS_ITEMS
 );
@@ -19,4 +21,9 @@ export const loadStatsItemsFail = createAction(
 export const loadStatsItemsSuccess = createAction(
 	LOAD_STATS_ITEMS_SUCCESS,
 	props<{ statsItems: StatsItem[] }>()
+);
+
+export const updateStatsItem = createAction(
+	UPDATE_STATS_ITEM,
+	props<{ statsItem: StatsItem }>()
 );

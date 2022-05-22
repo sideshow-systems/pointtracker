@@ -5,7 +5,7 @@ import { faArrowLeft, faArrowRight, faMinus, faPlus } from '@fortawesome/free-so
 import * as fromStore from '../../store';
 import { Team } from 'src/app/modules/enums';
 import { Store } from '@ngrx/store';
-import { Lap } from '../../interfaces';
+import { Lap, StatsItem } from '../../interfaces';
 
 @Component({
 	selector: 'pt-lap-point-counter',
@@ -58,6 +58,8 @@ export class LapPointCounterComponent implements OnInit {
 					active: true,
 				}
 			}));
+
+			this._resetLapPoints();
 		}
 	}
 
@@ -69,11 +71,14 @@ export class LapPointCounterComponent implements OnInit {
 					active: true,
 				}
 			}));
+
+			this._resetLapPoints();
 		}
 	}
 
 	changeTeam(team: Team): void {
 		this.scoreTeam = team;
+		this._writeLapToStore();
 	}
 
 	setLapPoints(points: number): void {
@@ -90,8 +95,29 @@ export class LapPointCounterComponent implements OnInit {
 		}
 	}
 
-
 	private _setLapPoints(points: number): void {
 		this.lapPoints = points;
+		this._writeLapToStore();
+	}
+
+	private _resetLapPoints(): void {
+		this.lapPoints = 0;
+	}
+
+	private _writeLapToStore(): void {
+		const resultNarrow = (this.scoreTeam === Team.NARROW) ? this.lapPoints : 0;
+		const resultWide = (this.scoreTeam === Team.WIDE) ? this.lapPoints : 0;
+
+		const statsItem: StatsItem = {
+			lapNum: this._currentLap.lapNumber,
+			active: true,
+			resultNarrow,
+			resultWide,
+			scoreParty: this.scoreTeam,
+		};
+
+		this._store.dispatch(fromStore.updateStatsItem({
+			statsItem,
+		}));
 	}
 }

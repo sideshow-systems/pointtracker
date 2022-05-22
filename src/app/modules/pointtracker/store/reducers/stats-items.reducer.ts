@@ -101,6 +101,19 @@ export const reducer = createReducer(
 			error,
 		};
 	}),
+
+	// Update stats item
+	on(fromStatsItems.updateStatsItem, (state, { statsItem }) => {
+		const entities = {
+			...state.entities,
+			[statsItem.lapNum]: statsItem,
+		};
+
+		return {
+			...state,
+			entities,
+		};
+	}),
 );
 
 export const getStatsItemsEntities = (state: StatsItemState) => state.entities;
