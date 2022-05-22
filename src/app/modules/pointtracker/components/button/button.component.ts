@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +16,13 @@ export class ButtonComponent implements OnInit {
 	@Input() iconOnRightSide: boolean = false;
 	@Input() inactive: boolean = false;
 
+	@Output() btnClicked: EventEmitter<void> = new EventEmitter();
+
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	btnClickedTrigger(): void {
+		this.btnClicked.emit();
+	}
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faAngleRight, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Team } from 'src/app/modules/enums';
 import { StatsItem } from '../../interfaces';
 
@@ -11,11 +12,13 @@ export class StatsItemComponent implements OnInit {
 
 	@Input() statItem: StatsItem = {
 		lapNum: 0,
+		active: false,
 		resultNarrow: null,
 		resultWide: null,
 		scoreParty: null,
 	};
 
+	faAngleRight: IconDefinition = faAngleRight;
 	teamInterface = Team;
 
 	constructor() {}
