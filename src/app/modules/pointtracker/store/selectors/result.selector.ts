@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { Team } from 'src/app/modules/enums';
-import { Resultbox } from '../../interfaces';
+import { Resultbox, StatsItem } from '../../interfaces';
 
 // import * as fromRoot from '../../store';
 import * as fromFeature from '../reducers';
@@ -27,10 +27,9 @@ export const getAllResultStatsItems = createSelector(
 export const getResultNarrow = createSelector(
 	getAllResultStatsItems,
 	(data) => {
-
 		let points = 0;
 		if (data !== null) {
-			// TODO: do stuff here
+			points = calcSumForTeam(data, Team.NARROW);
 		}
 
 		const resultBoxNarrow: Resultbox = {
@@ -47,7 +46,7 @@ export const getResultWide = createSelector(
 
 		let points = 0;
 		if (data !== null) {
-			// TODO: do stuff here
+			points = calcSumForTeam(data, Team.WIDE);
 		}
 
 		const resultBoxWide: Resultbox = {
@@ -57,3 +56,15 @@ export const getResultWide = createSelector(
 		return resultBoxWide;
 	}
 );
+
+const calcSumForTeam = (data: StatsItem[], team: Team) => {
+	return data.reduce((sum, item) => {
+		if (item.scoreParty === team) {
+			const pointsNarrow = (item.resultNarrow !== null) ? item.resultNarrow : 0;
+			const pointsWide = (item.resultWide !== null) ? item.resultWide : 0;
+			return sum + (item.scoreParty === Team.NARROW ? pointsNarrow : pointsWide);
+		} else {
+			return sum;
+		}
+	}, 0);
+};
