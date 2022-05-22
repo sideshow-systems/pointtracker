@@ -55,10 +55,6 @@ export const reducer = createReducer(
 		return {
 			...state,
 			lap,
-			// lap: {
-			// 	lapNumber: lap.lapNumber,
-			// 	active: lap.active,
-			// }
 		};
 	}),
 );

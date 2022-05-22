@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PointtrackerRoutingModule } from './pointtracker-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// import { reducers, effects } from './store';
-import { reducers } from './store';
+import { reducers, effects } from './store';
 
 // Containers
 import * as fromContainers from './containers';
@@ -16,6 +15,7 @@ import * as fromComponents from './components';
 // Services
 import * as fromServices from './services';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
 	declarations: [
@@ -25,6 +25,7 @@ import { StoreModule } from '@ngrx/store';
 	imports: [
 		CommonModule,
 		StoreModule.forFeature('pointtracker', reducers),
+		// EffectsModule.forFeature(effects),
 		PointtrackerRoutingModule,
 		FontAwesomeModule,
 	],

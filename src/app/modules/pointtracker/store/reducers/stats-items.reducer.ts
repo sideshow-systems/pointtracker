@@ -104,8 +104,25 @@ export const reducer = createReducer(
 
 	// Update stats item
 	on(fromStatsItems.updateStatsItem, (state, { statsItem }) => {
+
+		// Set active state in all entities entries of state to false
+		const manipulatedEntities = Object.keys(state.entities).reduce(
+			(entities: { [lapNum: number]: StatsItem }, key: any) => {
+				return {
+					...entities,
+					[key]: {
+						...state.entities[key],
+						active: false,
+					},
+				};
+			},
+			{
+				...state.entities,
+			}
+		);
+
 		const entities = {
-			...state.entities,
+			...manipulatedEntities,
 			[statsItem.lapNum]: statsItem,
 		};
 
