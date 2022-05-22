@@ -28,6 +28,11 @@ export class LapPointCounterComponent implements OnInit {
 
 	lap$ = this._store.select(fromStore.getCurrentLap);
 
+	team = Team;
+
+	lapPoints: number = 0;
+	scoreTeam: Team = Team.NARROW;
+
 	private _currentLap!: Lap;
 
 	constructor(
@@ -65,5 +70,28 @@ export class LapPointCounterComponent implements OnInit {
 				}
 			}));
 		}
+	}
+
+	changeTeam(team: Team): void {
+		this.scoreTeam = team;
+	}
+
+	setLapPoints(points: number): void {
+		this._setLapPoints(points);
+	}
+
+	increaseLapPoints(): void {
+		this._setLapPoints(this.lapPoints + 1);
+	}
+
+	decreaseLapPoints(): void {
+		if (this.lapPoints > 0) {
+			this._setLapPoints(this.lapPoints - 1);
+		}
+	}
+
+
+	private _setLapPoints(points: number): void {
+		this.lapPoints = points;
 	}
 }
