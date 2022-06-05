@@ -12,7 +12,7 @@ const routes: Routes = [
 	{
 		path: PointtrackerRoutes.emptyPath,
 		pathMatch: 'full',
-		redirectTo: `/${PointtrackerRoutes.pointtracker}`
+		redirectTo: `/${PointtrackerRoutes.pointtracker}/${PointtrackerRoutes.ptDashboard}`
 	}, {
 		path: PointtrackerRoutes.pointtracker,
 		loadChildren: () => import('./modules/pointtracker/pointtracker.module').then(m => m.PointtrackerModule)
