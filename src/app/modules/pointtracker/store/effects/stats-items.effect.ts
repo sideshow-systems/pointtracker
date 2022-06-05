@@ -46,4 +46,17 @@ export class StatsItemsEffects {
 		)
 	);
 
+	resetStatsItems$ = createEffect(
+		() => this.actions$.pipe(
+			ofType(statsItemsActions.RESET_STATS_ITEMS),
+			// tap(() => {
+			// 	this._localStorageService.persistState('statsitems', []);
+			// })
+			map(() => {
+				this._localStorageService.persistState('statsitems', []);
+				return statsItemsActions.updateStatsItemSuccess();
+			})
+		)
+	);
+
 }

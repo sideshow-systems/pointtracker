@@ -10,6 +10,8 @@ export const LOAD_STATS_ITEMS_SUCCESS = '[Dashboard] Load Stats Items Success';
 export const UPDATE_STATS_ITEM = '[Dashboard] Update Stats Item';
 export const UPDATE_STATS_ITEM_SUCCESS = '[Dashboard] Update Stats Item Success';
 
+export const RESET_STATS_ITEMS = '[Dashboard] Reset Stats Items';
+
 export const loadStatsItems = createAction(
 	LOAD_STATS_ITEMS
 );
@@ -31,4 +33,8 @@ export const updateStatsItem = createAction(
 
 export const updateStatsItemSuccess = createAction(
 	UPDATE_STATS_ITEM_SUCCESS,
+);
+
+export const resetStatsItems = createAction(
+	RESET_STATS_ITEMS,
 );

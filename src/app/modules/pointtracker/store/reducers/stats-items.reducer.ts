@@ -131,6 +131,11 @@ export const reducer = createReducer(
 			entities,
 		};
 	}),
+
+	// Reset stats items
+	on(fromStatsItems.resetStatsItems, (state) => {
+		return initialState;
+	}),
 );
 
 export const getStatsItemsEntities = (state: StatsItemState) => state.entities;
