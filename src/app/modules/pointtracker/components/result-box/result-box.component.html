@@ -1,6 +1,11 @@
-<div class="result-box-wrapper">
-	<ng-container *ngIf="result">
-		<h3>{{ result.team == teamInterface.NARROW ? 'eng' : 'weit' }}</h3>
-		<div class="points">{{ result.points }}</div>
-	</ng-container>
+<div class="wrapper">
+	<div class="result-box-wrapper" (click)="teamChangeTrigger()">
+		<ng-container *ngIf="result">
+			<h3>{{ result.team == teamInterface.NARROW ? 'eng' : 'weit' }}</h3>
+			<div class="points">{{ result.points }}</div>
+		</ng-container>
+	</div>
+	<div class="my-team-marker" *ngIf="myTeam">
+		<fa-icon [icon]="faTeamIcon"></fa-icon>
+	</div>
 </div>

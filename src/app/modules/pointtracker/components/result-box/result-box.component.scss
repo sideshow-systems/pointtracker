@@ -3,27 +3,44 @@
 $bw-border-radius: 0.7rem;
 
 :host {
-	.result-box-wrapper {
-		width: 10rem;
-		border: 1px solid $primary;
-		border-radius: $bw-border-radius;
-		overflow: hidden;
+	.wrapper {
+		position: relative;
+		.result-box-wrapper {
+			width: 10rem;
+			border: 1px solid $primary;
+			border-radius: $bw-border-radius;
+			overflow: hidden;
 
-		h3 {
-			text-align: center;
-			background-color: $primary;
-			color: $brightest;
-			margin: 0px;
-			padding: 3px 5px;
-			text-transform: uppercase;
-			font-size: 1.8rem;
+			h3 {
+				text-align: center;
+				background-color: $primary;
+				color: $brightest;
+				margin: 0px;
+				padding: 3px 5px;
+				text-transform: uppercase;
+				font-size: 1.8rem;
+			}
+
+			.points {
+				text-align: center;
+				font-size: 6rem;
+				font-weight: bold;
+				padding: 0.5rem 1rem;
+			}
 		}
 
-		.points {
+		.my-team-marker {
+			position: absolute;
+			top: -0.5rem;
+			right: -1.5rem;
+			background-color: $alert;
+			padding: 0.5rem 1.2rem;
+			color: $brightest;
+			border-radius: 1.5rem;
+			z-index: 1;
 			text-align: center;
-			font-size: 6rem;
-			font-weight: bold;
-			padding: 0.5rem 1rem;
+			font-size: 1.2rem;
+			box-shadow: 0.2rem 0.2rem 0.2rem 0 rgba($darkest, 0.4);
 		}
 	}
 }

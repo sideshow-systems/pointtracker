@@ -1,9 +1,17 @@
 <div class="result-wrapper">
 	<div class="narrow-wrapper">
-		<pt-result-box [result]="(resultBoxNarrow$ | async)"></pt-result-box>
+		<pt-result-box
+			[result]="resultBoxNarrow$ | async"
+			[myTeam]="isMyTeamNarrow$ | async"
+			(teamChange)="onTeamChange($event)"
+		></pt-result-box>
 	</div>
 	<div class="spacerpoints-wrapper">:</div>
 	<div class="wide-wrapper">
-		<pt-result-box [result]="(resultBoxWide$ | async)"></pt-result-box>
+		<pt-result-box
+			[result]="resultBoxWide$ | async"
+			[myTeam]="isMyTeamWide$ | async"
+			(teamChange)="onTeamChange($event)"
+		></pt-result-box>
 	</div>
 </div>
