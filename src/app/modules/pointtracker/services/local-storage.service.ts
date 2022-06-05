@@ -14,4 +14,9 @@ export class LocalStorageService {
 		const data = localStorage.getItem(key);
 		return data ? of(JSON.parse(data)) : of(null);
 	}
+
+	getValueByKey(key: string): any | null {
+		const data = localStorage.getItem(key);
+		return data ? JSON.parse(data) : null;
+	}
 }
