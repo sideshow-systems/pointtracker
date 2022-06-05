@@ -16,5 +16,6 @@ export class DashboardPageComponent implements OnInit {
 
 	ngOnInit(): void {
 		// this._store.dispatch(fromStore.loadStatsItems());
+		this._store.dispatch(fromStore.loadLap());
 	}
 }

@@ -57,6 +57,13 @@ export const reducer = createReducer(
 			lap,
 		};
 	}),
+
+	// Set lap success
+	on(fromLap.setLapSuccess, (state) => {
+		return {
+			...state,
+		};
+	}),
 );
 
 export const getLap = (state: LapState) => state.lap;

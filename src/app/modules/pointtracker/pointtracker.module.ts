@@ -25,7 +25,7 @@ import { EffectsModule } from '@ngrx/effects';
 	imports: [
 		CommonModule,
 		StoreModule.forFeature('pointtracker', reducers),
-		// EffectsModule.forFeature(effects),
+		EffectsModule.forFeature(effects),
 		PointtrackerRoutingModule,
 		FontAwesomeModule,
 	],
