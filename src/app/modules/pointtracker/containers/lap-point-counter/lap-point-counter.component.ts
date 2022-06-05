@@ -7,6 +7,8 @@ import { Team } from 'src/app/modules/enums';
 import { Store } from '@ngrx/store';
 import { Lap, StatsItem } from '../../interfaces';
 import { take, takeLast } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { PerformanceVoteDialogComponent } from '../performance-vote-dialog/performance-vote-dialog.component';
 
 @Component({
 	selector: 'pt-lap-point-counter',
@@ -37,17 +39,18 @@ export class LapPointCounterComponent implements OnInit {
 	private _currentLap!: Lap;
 
 	constructor(
-		private _store: Store<fromStore.PointtrackerState>
+		private _store: Store<fromStore.PointtrackerState>,
+		private _dialog: MatDialog,
 	) {}
 
 	ngOnInit(): void {
 		this.lap$.subscribe(lap => {
 			this._currentLap = lap;
 			this.btnPrevDisabled = (lap.lapNumber === 1);
-			this.btnNextDisabled = (lap.lapNumber === 6);
+			// this.btnNextDisabled = (lap.lapNumber === 6);
 
 			this.btnPrevLabel = (lap.lapNumber === 1) ? 'Zurück' : 'Durchgang ' + (lap.lapNumber - 1);
-			this.btnNextLabel = (lap.lapNumber === 6) ? 'Weiter' : 'Durchgang ' + (lap.lapNumber + 1);
+			this.btnNextLabel = (lap.lapNumber === 6) ? 'Spiel beenden' : 'Durchgang ' + (lap.lapNumber + 1);
 		});
 	}
 
@@ -74,7 +77,19 @@ export class LapPointCounterComponent implements OnInit {
 			}));
 
 			this._resetLapPoints();
+		} else {
+			// Show dialog to confirm end of game
+			this.showVotingDialog();
 		}
+	}
+
+	showVotingDialog() {
+		console.log('end game...');
+		const dialogRef = this._dialog.open(PerformanceVoteDialogComponent);
+
+		dialogRef.afterClosed().subscribe(result => {
+			console.log('dialog closed --> result:', result);
+		});
 	}
 
 	changeTeam(team: Team): void {

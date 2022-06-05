@@ -3,6 +3,7 @@ import { FooterControlsComponent } from "./footer-controls/footer-controls.compo
 import { GameStatsComponent } from "./game-stats/game-stats.component";
 import { LapPointCounterComponent } from "./lap-point-counter/lap-point-counter.component";
 import { LapStatusComponent } from "./lap-status/lap-status.component";
+import { PerformanceVoteDialogComponent } from "./performance-vote-dialog/performance-vote-dialog.component";
 import { ResultComponent } from "./result/result.component";
 
 export const containers: any[] = [
@@ -11,6 +12,7 @@ export const containers: any[] = [
 	GameStatsComponent,
 	LapPointCounterComponent,
 	LapStatusComponent,
+	PerformanceVoteDialogComponent,
 	ResultComponent,
 ];
 
@@ -19,4 +21,5 @@ export * from './footer-controls/footer-controls.component';
 export * from './game-stats/game-stats.component';
 export * from './lap-point-counter/lap-point-counter.component';
 export * from './lap-status/lap-status.component';
+export * from './performance-vote-dialog/performance-vote-dialog.component';
 export * from './result/result.component';

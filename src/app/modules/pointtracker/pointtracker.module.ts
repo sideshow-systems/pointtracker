@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { PointtrackerRoutingModule } from './pointtracker-routing.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { reducers, effects } from './store';
 
@@ -14,13 +17,15 @@ import * as fromComponents from './components';
 
 // Services
 import * as fromServices from './services';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+import { PerformanceVoteDialogComponent } from './containers/performance-vote-dialog/performance-vote-dialog.component';
+import { PerformanceVoteComponent } from './components/performance-vote/performance-vote.component';
 
 @NgModule({
 	declarations: [
 		...fromContainers.containers,
 		...fromComponents.components,
+  PerformanceVoteDialogComponent,
+  PerformanceVoteComponent,
 	],
 	imports: [
 		CommonModule,
@@ -28,6 +33,7 @@ import { EffectsModule } from '@ngrx/effects';
 		EffectsModule.forFeature(effects),
 		PointtrackerRoutingModule,
 		FontAwesomeModule,
+		MatDialogModule,
 	],
 	exports: [
 		...fromContainers.containers,
