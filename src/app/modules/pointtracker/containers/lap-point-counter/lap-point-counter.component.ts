@@ -47,10 +47,14 @@ export class LapPointCounterComponent implements OnInit {
 		this.lap$.subscribe(lap => {
 			this._currentLap = lap;
 			this.btnPrevDisabled = (lap.lapNumber === 1);
-			// this.btnNextDisabled = (lap.lapNumber === 6);
 
 			this.btnPrevLabel = (lap.lapNumber === 1) ? 'Zurück' : 'Durchgang ' + (lap.lapNumber - 1);
 			this.btnNextLabel = (lap.lapNumber === 6) ? 'Spiel beenden' : 'Durchgang ' + (lap.lapNumber + 1);
+		});
+
+		// Disable next button if rounds are not valid
+		this._store.select(fromStore.nextBtnDisabled).subscribe(valid => {
+			this.btnNextDisabled = valid;
 		});
 	}
 

@@ -1,10 +1,10 @@
 import { createSelector } from '@ngrx/store';
-import { Team } from 'src/app/modules/enums';
-import { Resultbox } from '../../interfaces';
 
 // import * as fromRoot from '../../store';
 import * as fromFeature from '../reducers';
 import * as fromStatsItems from '../reducers/stats-items.reducer';
+
+import * as fromLapSelector from '../selectors/lap.selector';
 
 
 export const getStatsItemsState = createSelector(
@@ -27,4 +27,15 @@ export const getAllStatsItems = createSelector(
 export const getStatsItemsEntity = (id: number) => createSelector(
 	getStatsItemsEntities,
 	entities => entities[id]
+);
+
+export const nextBtnDisabled = createSelector(
+	getAllStatsItems,
+	fromLapSelector.getCurrentLap,
+	(statsItems, currentLap) => {
+
+		if (currentLap.lapNumber < 6) return false;
+
+		return !(statsItems.every(statsItem => statsItem.scoreParty !== null));
+	}
 );
