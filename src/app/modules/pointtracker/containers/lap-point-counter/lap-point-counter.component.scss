@@ -8,7 +8,7 @@
 		h3 {
 			font-size: 1.6rem;
 
-			span {
+			strong {
 				color: $primary;
 			}
 		}
@@ -66,6 +66,55 @@
 			&.btn-increase {
 				fa-icon {
 					margin: 0 !important;
+				}
+			}
+		}
+
+		// &.NARROW {
+		// 	h3 strong {
+		// 		color: $ccNarrow !important;
+		// 	}
+		// }
+
+		.team-btns-wrapper {
+			.btn.btn-right {
+				pt-button {
+					button {
+						border-color: $ccWide;
+						color: $ccWide;
+					}
+				}
+			}
+		}
+
+		&.WIDE {
+			h3 strong {
+				color: $ccWide !important;
+			}
+
+			.team-btns-wrapper {
+				.btn.btn-right {
+					pt-button {
+						button {
+							color: $brightest;
+						}
+					}
+				}
+
+				fa-icon {
+					color: $ccWide !important;
+				}
+
+				.lap-points {
+					color: $ccWide !important;
+					border-color: $ccWide !important;
+				}
+			}
+
+			pt-button {
+				button {
+					background-color: $ccWide;
+					border-color: darken($ccWide, 10%);
 				}
 			}
 		}

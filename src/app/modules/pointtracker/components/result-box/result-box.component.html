@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" [ngClass]="result?.team == teamInterface.NARROW ? teamInterface.NARROW : teamInterface.WIDE">
 	<div class="result-box-wrapper" (click)="teamChangeTrigger()">
 		<ng-container *ngIf="result">
 			<h3>{{ result.team == teamInterface.NARROW ? 'eng' : 'weit' }}</h3>

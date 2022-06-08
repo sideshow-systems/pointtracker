@@ -5,6 +5,7 @@ $bw-border-radius: 0.7rem;
 :host {
 	.wrapper {
 		position: relative;
+
 		.result-box-wrapper {
 			width: 10rem;
 			border: 1px solid $primary;
@@ -27,6 +28,28 @@ $bw-border-radius: 0.7rem;
 				font-weight: bold;
 				line-height: 100%;
 				padding: 1.3rem 1rem;
+			}
+		}
+
+		&.NARROW {
+			.result-box-wrapper {
+				color: $ccNarrow;
+				border-color: $ccNarrow;
+
+				h3 {
+					background-color: $ccNarrow;
+				}
+			}
+		}
+
+		&.WIDE {
+			.result-box-wrapper {
+				color: $ccWide;
+				border-color: $ccWide;
+
+				h3 {
+					background-color: $ccWide;
+				}
 			}
 		}
 

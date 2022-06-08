@@ -1,5 +1,5 @@
-<div class="lap-point-counter-wrapper">
-	<h3>Punkte in Durchgang <span>{{ (lap$ | async)?.lapNumber }}</span> für</h3>
+<div class="lap-point-counter-wrapper" [ngClass]="scoreTeam == teamInterface.NARROW ? teamInterface.NARROW : teamInterface.WIDE">
+	<h3>Punkte in Durchgang <strong>{{ (lap$ | async)?.lapNumber }}</strong> für</h3>
 
 	<div class="team-btns-wrapper">
 		<div class="btn btn-left">

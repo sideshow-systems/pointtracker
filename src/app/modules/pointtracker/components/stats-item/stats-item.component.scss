@@ -22,7 +22,6 @@
 		.divider-box {
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;
-			// width: 3rem;
 			text-align: center;
 		}
 
@@ -41,14 +40,25 @@
 				width: 2.5rem;
 				text-align: right;
 				padding: 0.2rem;
+				padding-left: 0;
+				padding-right: 0.5rem;
 
 				&.result-wide {
 					text-align: left;
+					padding-left: 0.5rem;
+					padding-right: 0;
 				}
 
 				&.scored {
-					background-color: rgba($success, 0.3);
 					border-radius: 0.5rem;
+				}
+
+				&.result-narrow.scored {
+					background-color: rgba($ccNarrow, 0.3);
+				}
+
+				&.result-wide.scored {
+					background-color: rgba($ccWide, 0.3);
 				}
 			}
 		}
