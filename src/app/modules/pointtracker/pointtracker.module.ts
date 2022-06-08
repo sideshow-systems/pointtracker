@@ -17,15 +17,11 @@ import * as fromComponents from './components';
 
 // Services
 import * as fromServices from './services';
-import { PerformanceVoteDialogComponent } from './containers/performance-vote-dialog/performance-vote-dialog.component';
-import { PerformanceVoteComponent } from './components/performance-vote/performance-vote.component';
 
 @NgModule({
 	declarations: [
 		...fromContainers.containers,
 		...fromComponents.components,
-  PerformanceVoteDialogComponent,
-  PerformanceVoteComponent,
 	],
 	imports: [
 		CommonModule,
