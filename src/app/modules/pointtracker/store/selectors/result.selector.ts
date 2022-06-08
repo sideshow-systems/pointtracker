@@ -71,7 +71,12 @@ export const getGameResult = createSelector(
 		const date = new Date();
 
 		// Id
-		const id = parseInt(`${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}${date.getHours()}${date.getMinutes()}`, 10)
+		const year = date.getFullYear();
+		const month = (date.getMonth()+1).toString().padStart(2, '0');
+		const day = date.getDate().toString().padStart(2, '0');
+		const minutes = date.getMinutes().toString().padStart(2, '0');
+		const seconds = date.getSeconds().toString().padStart(2, '0');
+		const id = parseInt(`${year}${month}${day}${date.getHours()}${minutes}${seconds}`, 10)
 
 		// My team
 		const myTeam = myTeamSelector.team;

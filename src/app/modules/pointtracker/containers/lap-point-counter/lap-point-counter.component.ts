@@ -160,14 +160,18 @@ export class LapPointCounterComponent implements OnInit {
 
 	private _saveGame(vote: any) {
 		console.log('_saveGame', vote);
-		this._store.select(fromStore.getGameResult).subscribe(gameResult => {
+		this._store.select(fromStore.getGameResult)
+		.pipe(take(1))
+		.subscribe(gameResult => {
 
 			// Set current vote to result
-			gameResult.vote = vote;
+			const result = {
+				...gameResult,
+				vote: vote.vote,
+			};
+			console.log('gameResult', result);
 
-			console.log('gameResult', gameResult);
-
-			// this._store.dispatch(fromStore.saveGame({
+			this._store.dispatch(fromStore.createGame({ gameResult: result }));
 		});
 	}
 }

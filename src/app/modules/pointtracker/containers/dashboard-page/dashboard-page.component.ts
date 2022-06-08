@@ -42,5 +42,6 @@ export class DashboardPageComponent implements OnInit {
 		this._store.dispatch(fromStore.loadStatsItems());
 		this._store.dispatch(fromStore.loadLap());
 		this._store.dispatch(fromStore.loadMyTeam());
+		this._store.dispatch(fromStore.loadGames());
 	}
 }
