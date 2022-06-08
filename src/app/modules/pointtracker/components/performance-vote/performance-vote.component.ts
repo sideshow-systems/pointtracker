@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faFaceAngry, faFaceFrown, faFaceGrin, faFaceMeh, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
+import { Vote } from 'src/app/modules/enums';
 
 @Component({
 	selector: 'pt-performance-vote',
@@ -17,7 +18,9 @@ export class PerformanceVoteComponent {
 	faIconBad: IconDefinition = faFaceFrown;
 	faIconVeryBad: IconDefinition = faFaceAngry;
 
-	private _selected: number = 3;
+	private _selected: number = Vote.NEUTRAL;
+
+	votes = Vote;
 
 	vote(vote: number): void {
 		this._selected = vote;

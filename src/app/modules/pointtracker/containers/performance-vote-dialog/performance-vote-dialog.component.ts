@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Vote } from 'src/app/modules/enums';
 import { PerformanceVoteComponent } from '../../components';
 
 @Component({
@@ -9,7 +10,7 @@ import { PerformanceVoteComponent } from '../../components';
 })
 export class PerformanceVoteDialogComponent {
 
-	vote: number = 3;
+	vote: number = Vote.NEUTRAL;
 
 	constructor(
 		private _dialogRef: MatDialogRef<PerformanceVoteComponent>,
