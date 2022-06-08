@@ -159,7 +159,6 @@ export class LapPointCounterComponent implements OnInit {
 	}
 
 	private _saveGame(vote: any) {
-		console.log('_saveGame', vote);
 		this._store.select(fromStore.getGameResult)
 		.pipe(take(1))
 		.subscribe(gameResult => {
@@ -169,7 +168,7 @@ export class LapPointCounterComponent implements OnInit {
 				...gameResult,
 				vote: vote.vote,
 			};
-			console.log('gameResult', result);
+			// console.log('gameResult', result);
 
 			this._store.dispatch(fromStore.createGame({ gameResult: result }));
 		});
