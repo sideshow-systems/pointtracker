@@ -84,11 +84,12 @@ export class LapPointCounterComponent implements OnInit {
 	}
 
 	showVotingDialog() {
-		console.log('end game...');
 		const dialogRef = this._dialog.open(PerformanceVoteDialogComponent);
 
 		dialogRef.afterClosed().subscribe(result => {
-			console.log('dialog closed --> result:', result);
+			if (result) {
+				this._saveGame(result);
+			}
 		});
 	}
 
@@ -155,5 +156,18 @@ export class LapPointCounterComponent implements OnInit {
 		this._store.dispatch(fromStore.updateStatsItem({
 			statsItem,
 		}));
+	}
+
+	private _saveGame(vote: any) {
+		console.log('_saveGame', vote);
+		this._store.select(fromStore.getGameResult).subscribe(gameResult => {
+
+			// Set current vote to result
+			gameResult.vote = vote;
+
+			console.log('gameResult', gameResult);
+
+			// this._store.dispatch(fromStore.saveGame({
+		});
 	}
 }

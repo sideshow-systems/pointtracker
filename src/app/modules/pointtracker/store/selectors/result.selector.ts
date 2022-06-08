@@ -1,11 +1,13 @@
 import { createSelector } from '@ngrx/store';
-import { Team } from 'src/app/modules/enums';
-import { Resultbox, StatsItem } from '../../interfaces';
+import { Team, Vote } from 'src/app/modules/enums';
+import { GameResult, Resultbox, StatsItem } from '../../interfaces';
 
 // import * as fromRoot from '../../store';
 import * as fromFeature from '../reducers';
 import * as fromStatsItems from '../reducers/stats-items.reducer';
 
+import * as fromMyTeamSelector from '../selectors/my-team.selector';
+import * as fromStatsItemsSelector from '../selectors/stats-items.selector';
 
 export const getResultStatsItemsState = createSelector(
 	fromFeature.getPointtrackerState,
@@ -54,6 +56,46 @@ export const getResultWide = createSelector(
 			points: points,
 		};
 		return resultBoxWide;
+	}
+);
+
+export const getGameResult = createSelector(
+	getResultNarrow,
+	getResultWide,
+	fromMyTeamSelector.getMyTeam,
+	fromStatsItemsSelector.getAllStatsItems,
+	(narrow, wide, myTeamSelector, statsItems) => {
+		// console.log('getGameResult', narrow, wide, myTeamSelector, statsItems);
+
+		// Date
+		const date = new Date();
+
+		// Id
+		const id = parseInt(`${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}${date.getHours()}${date.getMinutes()}`, 10)
+
+		// My team
+		const myTeam = myTeamSelector.team;
+
+		// Opponent team
+		const opponentTeam = (myTeam === Team.NARROW) ? Team.WIDE : Team.NARROW;
+
+		// Winning team
+		const winningTeam = (narrow.points > wide.points) ? Team.NARROW : Team.WIDE;
+
+		// Did I win
+		const didIWin = (winningTeam === myTeam);
+
+		const result: GameResult = {
+			id,
+			date,
+			myTeam,
+			opponentTeam,
+			winningTeam,
+			didIWin,
+			vote: Vote.NEUTRAL,
+			statsItems,
+		};
+		return result;
 	}
 );
 
