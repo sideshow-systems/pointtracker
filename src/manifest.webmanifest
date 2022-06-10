@@ -1,7 +1,7 @@
 {
-  "name": "pointtracker",
-  "short_name": "pointtracker",
-  "theme_color": "#1976d2",
+  "name": "Pointtracker",
+  "short_name": "Pointtracker",
+  "theme_color": "#00AFEF",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
