@@ -175,6 +175,15 @@ export class LapPointCounterComponent implements OnInit {
 			// console.log('gameResult', result);
 
 			this._store.dispatch(fromStore.createGame({ gameResult: result }));
+
+			// Reset lap
+			this._store.dispatch(fromStore.setLap({ lap: { lapNumber: 1, active: true } }));
+
+			// Reset my team
+			this._store.dispatch(fromStore.setMyTeam({ myteam: { team: Team.NARROW } }));
+
+			// Reset stats
+			this._store.dispatch(fromStore.resetStatsItems());
 		});
 	}
 }
