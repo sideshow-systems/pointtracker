@@ -14,7 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '../environments/environment';
-import { ServiceWorkerService } from './services';
+import { ColorSchemeService, ServiceWorkerService } from './services';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -57,11 +57,18 @@ import * as fromServices from './services';
 	],
 })
 export class AppModule {
-	constructor(private _serviceWorkerService: ServiceWorkerService) {
+
+	constructor(
+		private _serviceWorkerService: ServiceWorkerService,
+		private _colorSchemeService: ColorSchemeService,
+	) {
 		// Initialize service worker update
 		this._serviceWorkerService.init();
 		this._serviceWorkerService.registerUpdateInterval(
 			environment.serviceWorkerUpdateInterval
 		);
+
+		// Initialize color scheme
+		this._colorSchemeService.init();
 	}
 }
