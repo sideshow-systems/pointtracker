@@ -33,3 +33,21 @@ body {
 		color: #fff;
 	}
 }
+
+
+/** Bottom sheet stuff **/
+.pt-bottom-sheet-panel {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	overflow: hidden;
+
+	.mat-bottom-sheet-container {
+		padding: 0;
+		height: 90vh;
+	}
+}
+
+.pt-bottom-sheet-backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(0.2rem);
+}

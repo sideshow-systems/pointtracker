@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faInfo } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { Team } from 'src/app/modules/enums';
 import { CancelGameDialogComponent } from '../../components/cancel-game-dialog/cancel-game-dialog.component';
 
 import * as fromStore from '../../store';
+import { HelpAndInfoPageComponent } from '../help-and-info-page/help-and-info-page.component';
 
 @Component({
 	selector: 'pt-footer-controls',
@@ -13,9 +17,12 @@ import * as fromStore from '../../store';
 })
 export class FooterControlsComponent implements OnInit {
 
+	faHelpIcon: IconDefinition = faInfo;
+
 	constructor(
 		private _store: Store<fromStore.PointtrackerState>,
 		private _dialog: MatDialog,
+		private _bottomSheet: MatBottomSheet,
 	) {}
 
 	ngOnInit(): void {}
@@ -27,6 +34,13 @@ export class FooterControlsComponent implements OnInit {
 			if (result) {
 				this._startNewGame();
 			}
+		});
+	}
+
+	showHelp() {
+		this._bottomSheet.open(HelpAndInfoPageComponent, {
+			backdropClass: 'pt-bottom-sheet-backdrop',
+			panelClass: 'pt-bottom-sheet-panel',
 		});
 	}
 
