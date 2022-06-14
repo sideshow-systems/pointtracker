@@ -2,20 +2,24 @@ import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import packageJson from '../../../../../../package.json';
+import { Store } from '@ngrx/store';
+
+import * as fromStore from '../../store';
 
 @Component({
-	selector: 'pt-help-and-info-page',
-	templateUrl: './help-and-info-page.component.html',
-	styleUrls: ['./help-and-info-page.component.scss'],
+	selector: 'pt-prev-games-page',
+	templateUrl: './prev-games-page.component.html',
+	styleUrls: ['./prev-games-page.component.scss'],
 })
-export class HelpAndInfoPageComponent {
+export class PrevGamesPageComponent {
 
 	faIconClose: IconDefinition = faTimes;
-	appVersion: string = packageJson.version;
+
+	games$ = this._store.select(fromStore.getAllGames);
 
 	constructor(
 		private _bottomSheetRef: MatBottomSheetRef,
+		private _store: Store<fromStore.PointtrackerState>
 	) {}
 
 	close() {

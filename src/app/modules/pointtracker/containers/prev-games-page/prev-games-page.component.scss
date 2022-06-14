@@ -1,0 +1,49 @@
+@import '../../../../../assets/styles/styles';
+
+:host {
+	header {
+		display: flex;
+		justify-content: space-between;
+		background-color: $primary;
+		color: $brightest;
+		padding: 0.8rem 1.6rem;
+		margin-bottom: 1rem;
+
+		h1 {
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.prev-games-page-wrapper {
+		padding: 0.8rem 1.6rem;
+
+		.alert-msg {
+			background-color: $alert;
+			padding: 1rem;
+			margin-bottom: 3rem;
+			text-align: center;
+			color: $brightest;
+			border-radius: 1rem;
+		}
+
+		.no-games-msg {
+			text-align: center;
+			padding: 2rem;
+			margin-bottom: 3rem;
+		}
+
+		hr {
+			border: none;
+			height: 1px;
+			background-color: $primary;
+		}
+
+		pt-game-card {
+			display: block;
+			margin-bottom: 1.5rem;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid $primary;
+		}
+	}
+}

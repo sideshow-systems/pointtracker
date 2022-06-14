@@ -1,0 +1,5 @@
+<div class="game-card-wrapper">
+	<!-- {{ game | json }} -->
+	<p><strong>Datum:</strong> {{ game?.date | date: 'dd.MM.yyyy HH:mm' }} Uhr</p>
+	<p><strong>Gewonnen:</strong> {{ game?.didIWin == true ? 'Ja' : 'Nein' }}</p>
+</div>

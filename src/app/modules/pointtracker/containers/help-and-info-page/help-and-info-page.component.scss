@@ -2,6 +2,8 @@
 
 :host {
 	header {
+		display: flex;
+		justify-content: space-between;
 		background-color: $primary;
 		color: $brightest;
 		padding: 0.8rem 1.6rem;

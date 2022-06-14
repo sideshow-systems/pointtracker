@@ -1,0 +1,22 @@
+<header>
+	<h1>Bisherige Spiele</h1>
+	<pt-button [inverted]="true" (btnClicked)="close()">
+		<fa-icon [icon]="faIconClose"></fa-icon>
+	</pt-button>
+</header>
+<div class="prev-games-page-wrapper">
+
+	<div class="alert-msg">
+		Hinweis: Diese Ansicht wird noch überarbeitet!
+	</div>
+
+	<!-- <div class="prev-games-wrapper">
+		{{ games$ | async | json }}
+	</div> -->
+	<ng-container *ngIf="(games$ | async) as games">
+		<pt-game-card *ngFor="let game of games$ | async" [game]="game"></pt-game-card>
+		<div class="no-games-msg" *ngIf="games.length == 0">Keine Spiele verfügbar</div>
+	</ng-container>
+
+	<pt-button (btnClicked)="close()">Schließen</pt-button>
+</div>

@@ -5,6 +5,7 @@ import { HelpAndInfoPageComponent } from "./help-and-info-page/help-and-info-pag
 import { LapPointCounterComponent } from "./lap-point-counter/lap-point-counter.component";
 import { LapStatusComponent } from "./lap-status/lap-status.component";
 import { PerformanceVoteDialogComponent } from "./performance-vote-dialog/performance-vote-dialog.component";
+import { PrevGamesPageComponent } from "./prev-games-page/prev-games-page.component";
 import { ResultComponent } from "./result/result.component";
 
 export const containers: any[] = [
@@ -15,6 +16,7 @@ export const containers: any[] = [
 	LapPointCounterComponent,
 	LapStatusComponent,
 	PerformanceVoteDialogComponent,
+	PrevGamesPageComponent,
 	ResultComponent,
 ];
 
@@ -25,4 +27,5 @@ export * from './help-and-info-page/help-and-info-page.component';
 export * from './lap-point-counter/lap-point-counter.component';
 export * from './lap-status/lap-status.component';
 export * from './performance-vote-dialog/performance-vote-dialog.component';
+export * from './prev-games-page/prev-games-page.component';
 export * from './result/result.component';
