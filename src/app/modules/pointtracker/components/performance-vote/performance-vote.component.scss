@@ -16,6 +16,8 @@
 			line-height: 100%;
 			color: $primary;
 			background: none;
+			display: inline-block;
+			padding: 0 0.5rem;
 
 			&.is-active {
 				color: $success;

@@ -1,9 +1,7 @@
 <h2 mat-dialog-title>Wie war Dein Spiel?</h2>
 <mat-dialog-content class="mat-typography">
 	<h3>Wie schätzt Du Deine Leistung in dieser Partie ein?</h3>
-
 	<pt-performance-vote (voteEmitter)="setVote($event)"></pt-performance-vote>
-
 </mat-dialog-content>
 <mat-dialog-actions align="end">
 	<pt-button (btnClicked)="closeDialog()">Spiel speichern</pt-button>
