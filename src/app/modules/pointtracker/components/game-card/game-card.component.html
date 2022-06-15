@@ -1,5 +1,26 @@
-<div class="game-card-wrapper">
-	<!-- {{ game | json }} -->
-	<p><strong>Datum:</strong> {{ game?.date | date: 'dd.MM.yyyy HH:mm' }} Uhr</p>
-	<p><strong>Gewonnen:</strong> {{ game?.didIWin == true ? 'Ja' : 'Nein' }}</p>
+<div class="game-card-wrapper" [ngClass]="game?.didIWin ? 'win' : 'loose'">
+	<div class="winloose-marker"></div>
+	<div class="card-content">
+		<p class="date-and-winloose">
+			<span>
+				<strong>Datum:</strong> {{ game?.date | date: 'dd.MM.yyyy · HH:mm' }} Uhr
+			</span>
+			<span>
+				<strong>{{ game?.didIWin ? 'Gewonnen' : 'Verloren' }}</strong>
+				<span class="vote-icon-wrapper">
+					<fa-icon [icon]="getVoteIcon(game?.vote)"></fa-icon>
+				</span>
+			</span>
+		</p>
+		<p class="my-team-and-stats">
+			<span>
+				<strong>Team:</strong> {{ game?.myTeam === team.NARROW ? 'ENG' : 'WEIT' }}
+			</span>
+			<span class="stats-wrapper">
+				<span *ngFor="let item of game?.statsItems">
+					{{ item.resultNarrow }}:{{ item.resultWide }}
+				</span>
+			</span>
+		</p>
+	</div>
 </div>

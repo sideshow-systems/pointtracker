@@ -1,0 +1,76 @@
+@import '../../../../../assets/styles/styles';
+
+$border-radius: 0.5rem;
+
+:host {
+	.game-card-wrapper {
+		display: flex;
+		border-radius: $border-radius;
+
+		p {
+			font-size: 1.3rem;
+		}
+
+		.winloose-marker {
+			width: 1rem;
+			border-top-left-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+		}
+
+		&.win {
+			border: 0.1rem solid $success;
+
+			.winloose-marker {
+				background-color: $success;
+				outline: 0.1rem solid $success;
+			}
+		}
+
+		&.loose {
+			border: 0.1rem solid $alert;
+
+			.winloose-marker {
+				background-color: $alert;
+				outline: 0.1rem solid $alert;
+			}
+		}
+
+		.card-content {
+			padding: 1rem;
+			width: 100%;
+
+			.date-and-winloose {
+				display: flex;
+				justify-content: space-between;
+
+				.vote-icon-wrapper {
+					padding-left: 0.5rem;
+					color: $primary;
+				}
+			}
+
+			.my-team-and-stats {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 0;
+
+				.stats-wrapper span {
+
+					&::after {
+						content: '|';
+						padding-left: 0 0.3rem;
+						color: $primary;
+					}
+
+					&:last-child {
+						&::after {
+							content: '';
+							padding: 0;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}

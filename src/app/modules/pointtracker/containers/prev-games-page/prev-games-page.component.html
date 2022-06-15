@@ -6,13 +6,10 @@
 </header>
 <div class="prev-games-page-wrapper">
 
-	<div class="alert-msg">
+	<!-- <div class="alert-msg">
 		Hinweis: Diese Ansicht wird noch überarbeitet!
-	</div>
-
-	<!-- <div class="prev-games-wrapper">
-		{{ games$ | async | json }}
 	</div> -->
+
 	<ng-container *ngIf="(games$ | async) as games">
 		<pt-game-card *ngFor="let game of games$ | async" [game]="game"></pt-game-card>
 		<div class="no-games-msg" *ngIf="games.length == 0">Keine Spiele verfügbar</div>

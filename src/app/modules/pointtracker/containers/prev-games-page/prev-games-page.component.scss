@@ -2,6 +2,10 @@
 
 :host {
 	header {
+		position: sticky;
+		top: 0;
+		left: 0;
+		right: 0;
 		display: flex;
 		justify-content: space-between;
 		background-color: $primary;
@@ -41,9 +45,7 @@
 
 		pt-game-card {
 			display: block;
-			margin-bottom: 1.5rem;
-			padding-bottom: 1rem;
-			border-bottom: 1px solid $primary;
+			margin-bottom: 1rem;
 		}
 	}
 }

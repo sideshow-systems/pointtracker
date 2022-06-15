@@ -15,7 +15,7 @@ export class PrevGamesPageComponent {
 
 	faIconClose: IconDefinition = faTimes;
 
-	games$ = this._store.select(fromStore.getAllGames);
+	games$ = this._store.select(fromStore.getPrevGames);
 
 	constructor(
 		private _bottomSheetRef: MatBottomSheetRef,

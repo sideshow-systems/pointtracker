@@ -20,3 +20,12 @@ export const getAllGames = createSelector(
 		return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
 	}
 );
+
+export const getPrevGames = createSelector(
+	getAllGames,
+	games => {
+		return games.sort((a, b) => {
+			return new Date(b.date).getTime() - new Date(a.date).getTime();
+		});
+	}
+);
