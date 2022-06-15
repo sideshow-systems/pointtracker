@@ -16,6 +16,9 @@
 			<span>
 				<strong>Team:</strong> {{ game?.myTeam === team.NARROW ? 'ENG' : 'WEIT' }}
 			</span>
+			<span>
+				<strong>{{ generateResult(game?.statsItems) }}</strong>
+			</span>
 			<span class="stats-wrapper">
 				<span *ngFor="let item of game?.statsItems">
 					{{ item.resultNarrow }}:{{ item.resultWide }}

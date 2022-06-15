@@ -3,7 +3,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faFaceAngry, faFaceFrown, faFaceGrin, faFaceMeh, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 
 import { Team, Vote } from 'src/app/modules/enums';
-import { GameResult } from '../../interfaces';
+import { GameResult, StatsItem } from '../../interfaces';
 
 @Component({
 	selector: 'pt-game-card',
@@ -44,6 +44,18 @@ export class GameCardComponent {
 					result = this.faIconVeryBad;
 					break;
 			}
+		}
+
+		return result;
+	}
+
+	generateResult(items: StatsItem[] | undefined): string {
+		let result = '-:-';
+
+		if (items) {
+			const resultNarrow = items.reduce((acc, item) => acc + (item.resultNarrow ? item.resultNarrow : 0), 0);
+			const resultWide = items.reduce((acc, item) => acc + (item.resultWide ? item.resultWide : 0), 0);
+			result = `${resultNarrow}:${resultWide}`;
 		}
 
 		return result;
