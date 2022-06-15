@@ -50,6 +50,10 @@ export class ServiceWorkerService {
 		}
 	}
 
+	checkForUpdate(): Promise<boolean> {
+		return this._swUpdate.checkForUpdate();
+	}
+
 	/**
 	 * Register update interval
 	 *
